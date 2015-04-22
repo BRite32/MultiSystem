@@ -18,4 +18,4 @@
 * Compatibility with all Android versions
 
 ## Q&A:
-Q&A at XDA-Developers Forum can be found [here](http://forum.xda-developers.com/verizon-galaxy-note-3/help/qa-multisystem-android-t3089530).
+Q&A at XDA-Developers forums can be found [here](http://forum.xda-developers.com/verizon-galaxy-note-3/help/qa-multisystem-android-t3089530).
