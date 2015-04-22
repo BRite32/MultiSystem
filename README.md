@@ -1,4 +1,4 @@
-# Multiystem
+# MultiSystem
 **MultiSystem** is a powerful tool for locked- and unlocked-bootloader Android devices with many features that at least includes the following:
 * Keeps stock system partition safe/rooted
 * Permenant root survival with proper use
