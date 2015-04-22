@@ -16,3 +16,6 @@
 * Support for all Android devices with microSD card
 * Portability to almost all devices
 * Compatibility with all Android versions
+
+## Q&A:
+Q&A can be found (here)[http://forum.xda-developers.com/verizon-galaxy-note-3/help/qa-multisystem-android-t3089530].
