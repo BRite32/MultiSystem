@@ -4,6 +4,8 @@
 * Permenant root survival with proper use
 * MultiROM support via virtual ROMs
 * Unlimited number of virtual ROMs
+* Booting options to choose stock, primary, or secondary virtual ROM
+* Flashing multiple ROMs at the same time without a reboot
 * Great performance & battery life on virtual ROMs
 * Recovery solution to install ROMs or Mods
 * Easy upgrade to newer versions of Android
