@@ -7,6 +7,7 @@
 * Booting options to choose stock, primary, or secondary virtual ROM
 * Any of the virtual ROMs can work as a recovery replacement
 * Flashing multiple ROMs at the same time without a reboot
+* Ability to create/install ROMs on Linux to microSD card
 * Great performance & battery life on virtual ROMs
 * Recovery solution to install ROMs or Mods
 * Easy upgrade to newer versions of Android
