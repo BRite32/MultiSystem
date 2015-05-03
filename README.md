@@ -22,4 +22,4 @@
 * Compatibility with all Android versions
 
 ## XDA Thread:
-More information can be found [here](http://forum.xda-developers.com/verizon-galaxy-note-3/help/qa-multisystem-android-t3089530).
+More information can be found [here](http://forum.xda-developers.com/verizon-galaxy-note-3/development/tool-multirom-recovery-replacement-t3098920).
