@@ -21,5 +21,5 @@
 * Portability to almost all devices
 * Compatibility with all Android versions
 
-## Q&A:
-Q&A thread at XDA-Developers forums can be found [here](http://forum.xda-developers.com/verizon-galaxy-note-3/help/qa-multisystem-android-t3089530).
+## XDA Thread:
+More information can be found [here](http://forum.xda-developers.com/verizon-galaxy-note-3/help/qa-multisystem-android-t3089530).
