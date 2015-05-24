@@ -22,4 +22,4 @@
 * Compatibility with all Android versions
 
 ## XDA Thread:
-More information can be found [here](http://forum.xda-developers.com/verizon-galaxy-note-3/development/tool-multirom-recovery-replacement-t3098920).
+More information can be found [here](http://forum.xda-developers.com/android/software-hacking/tool-multirom-recovery-replacement-t3102395).
