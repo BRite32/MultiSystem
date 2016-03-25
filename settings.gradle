@@ -1,0 +1,6 @@
+include ':MultiSystem'
+include ':libs:CardsUILib'
+include ':libs:PagerSlidingStrip'
+include ':libs:SwitchCompatLibrary'
+include ':libs:HoloGraphLibrary'
+include ':libs:aFileChooser'

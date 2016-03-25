@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin>
+    <card description="THIS SOFTWARE IS PROVIDED AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. USE AT YOUR OWN RISK!" 
+		stripe-color="#666666" title="DISCLAIMER" type="text-stripe" />
+
+    <card description="MultiSystem is a powerful tool and can perform potentially dangerous and/or destructive operations on your device and data that may affect your life. While it is unlikely to do irreversable damage to your device, it is not impossible, and you should proceed with caution. Loss of data and/or the need to re-flash a full stock (manufacturer-supplied) firmware IMGs (usually requiring a computer) is always a possibility, and is increasingly likely if you do not know what you are doing. It is possible to lose root access when using MultiSystem on locked-bootloader devices running unexpoitable (bu rooted) Android firmware, without careful reading of documentation or following the instructions. Please consult with expert users before performing actions you do not comprehend."
+		stripe-color="#FFC74B46" title="Potential Damage" type="text-stripe" />
+
+    <card button="Install" command="@su: su -c 'busybox chmod -R 0755 /data/data/com.hsbadr.MultiSystem/files/.MultiSystem/bin'; su -c '/data/data/com.hsbadr.MultiSystem/files/.MultiSystem/bin/install.sh'" control="button"
+        description="install MultiSystem..."
+        title="Install" type="shell" />
+
+    <card button="Uninstall" command="@su: su -c 'MultiSystem uninstall'" control="button"
+        description="uninstall MultiSystem..."
+        title="Uninstall" type="shell" />
+
+    <card description="You can control your virtual ROMs manually, using wrapper script, or in this MultiSystem APK. To synchronize changes and restart, press Update button!"
+		stripe-color="#16a085" title="Update Configurations" type="text-stripe" />
+
+    <card control="seekbar" description="select sleep time for boot options!"
+        title="Sleep Time" type="build.prop">
+        <prop>SleepTime</prop>
+        <min-value>1</min-value>
+        <max-value>30</max-value>
+        <default-value>3</default-value>
+        <unit> seconds</unit>
+    </card>
+
+    <card button="Update Configurations" command="@su: su -c 'MultiSystem update'" control="button"
+        description="update configurations..."
+        title="Update" type="shell" />
+
+    <card description="You can (de)activate virtual system to boot directly to stock system. If the virtual system is activated, you can activate any IMG including backups, copies, and new IMGs."
+		stripe-color="#808000" title="Activate" type="text-stripe" />
+
+    <card control="switch" description="activate virtual system!" title="Virtual System"
+        type="build.prop">
+        <on>Virtual</on>
+        <off>Stock</off>
+        <prop>ActiveSystem</prop>
+    </card>
+
+    <card control="spinner"
+        description="select primary virtual system IMG!"
+        entries="Select Virtual System..." prop="ActiveIMG" title="Primary System IMG"
+        type="build.prop" />
+
+    <card control="spinner"
+        description="select secondary virtual system IMG!"
+        entries="Select Virtual System..." prop="ActiveIMG2" title="Secondary System IMG"
+        type="build.prop" />
+
+    <card description="You can create a virtual IMG from the stock system partition or a copy of an existing IMG. To add a new IMG provided by a developer, use any root explorer to copy the .img file to /MultiSystem/img/system/. MultiSystem makes it very simple to backup/restore any of the virtual IMGs: just use any root explorer and go to /MultiSystem/img/system/ to copy/rename/remove any IMG. Then, press update configurations button to register the new IMGs. Do not turn off device/screen until the red LED warning dissappear!"
+		stripe-color="#34495e" title="Backup/Restore" type="text-stripe" />
+
+    <card button="Create Virtual IMG" command="@su: su -c 'MultiSystem create stock'" control="button"
+        description="create virtual IMG from the stock system partition; may take a few minutes... be patient!"
+        title="Create" type="shell" />
+
+    <card control="spinner"
+        description="select virtual system IMG to be copied!"
+        entries="Select Virtual System..." prop="copyIMG" title="Copy IMG"
+        type="build.prop" />
+
+    <card button="Copy Virtual IMG" command="@su: su -c 'MultiSystem create virtual'" control="button"
+        description="copy virtual IMG... be patient!"
+        title="Copy" type="shell" />
+
+    <card description="It is recommended to wipe cache/dalvic before/after a new installation. Wipe data after making approproiate backup to boot a virtual ROM with different firmware/build!"
+		stripe-color="#A0522D" title="Wipe" type="text-stripe" />
+
+    <card control="switch" description="always recommended!" title="Wipe Cache"
+        type="build.prop">
+        <on>1</on>
+        <off>0</off>
+        <prop>wipeCache</prop>
+    </card>
+
+    <card control="switch" description="always recommended!" title="Wipe Dalvik"
+        type="build.prop">
+        <on>1</on>
+        <off>0</off>
+        <prop>wipeDalvik</prop>
+    </card>
+
+    <card control="switch" description="make appropriate backup!" title="Wipe Data"
+        type="build.prop">
+        <on>1</on>
+        <off>0</off>
+        <prop>wipeData</prop>
+    </card>
+
+    <card button="Wipe!" command="@su: su -c 'MultiSystem wipe'" control="button"
+        description="Press to wipe the selectd partitions!"
+        title="Wipe" type="shell" />
+
+    <card description="You can mount/unmount any of your virtual system IMGs or the stock system partition (be careful!). The selected IMG will be mounted on '/MultiSystem/mnt/system' for flashing or manual modifications. It is not recommended to modify the stock system partition!"
+		stripe-color="#008B8B" title="Mount" type="text-stripe" />
+
+    <card control="switch" description="If you are running the primary virtual ROM, mount the stock system partition at early boot to /MultiSystem/mnt/system-stock" title="Mount Stock"
+        type="build.prop">
+        <on>1</on>
+        <off>0</off>
+        <prop>mountStock</prop>
+    </card>
+
+    <card control="switch" description="If you are running the primary virtual ROM, mount the secondary system IMG at early boot to /MultiSystem/mnt/system-virtual" title="Mount Virtual"
+        type="build.prop">
+        <on>1</on>
+        <off>0</off>
+        <prop>mountVirtual</prop>
+    </card>
+
+    <card control="spinner"
+        description="select virtual system IMG to be mounted!"
+        entries="Select Virtual System..." prop="mountIMG" title="Mount IMG"
+        type="build.prop" />
+
+    <card button="Mount Virtual IMG" command="@su: su -c 'MultiSystem mount virtual'" control="button"
+        description="mount virtual system IMG..."
+        title="Mount IMG" type="shell" />
+
+    <card button="Mount System Partition" command="@su: su -c 'MultiSystem mount stock'" control="button"
+        description="mount stock system partition..."
+        title="Mount System" type="shell" />
+
+    <card button="Unmount System IMG/Partition" command="@su: su -c 'MultiSystem unmount'" control="button"
+        description="unmount system IMG/partition..."
+        title="Unmount System" type="shell" />
+
+    <card description="It is strongly recommended to flash .ZIP files NOT to the current system. Some files can not be overwritten while running. Flash to any of your virtual IMGs by mounting the desired IMG above, select .ZIP file, and Flash! You can use FlashFire to flash to the running system!" 
+		stripe-color="#2980b9" title="Flash" type="text-stripe" />
+
+    <card button="Select File" command="@su: am start -n com.hsbadr.MultiSystem/com.hsbadr.MultiSystem.FileChooserActivity" control="button"
+        description="select .ZIP file to flash..."
+        title="Select .ZIP" type="shell" />
+
+    <card button="Flash File" command="@su: su -c 'MultiSystem flash'" control="button"
+        description="flash .ZIP file to the mounted virtual/stock system! If this did not work, open Terminal Emulator bellow and run 'MultiSystem flash' as root, after selecting the .ZIP file –or use FlashFire to flash to the running system!"
+        title="Flash .ZIP" type="shell" />
+
+    <card description="Virtual ROMs are fully compatible with FlashFire where the system files get flashed directly to the virtual IMG. FlashFire should be installed separately!"
+		stripe-color="#00838F" title="FlashFire" type="text-stripe" />
+
+    <card button="Launch FlashFire" command="@su: am start -n eu.chainfire.flash/eu.chainfire.flash.ui.activity.MainActivity" control="button"
+        description="use FlashFire to flash to the current system..."
+        title="FlashFire" type="shell" />
+
+    <card description="You may run MultiSystem script via ADB shell or in a Terminal Emulator on device. Terminal Emulator should be installed separately!"
+		stripe-color="#2F4F4F" title="Terminal Emulator" type="text-stripe" />
+
+    <card button="Launch Terminal Emulator" command="@su: am start -n jackpal.androidterm/jackpal.androidterm.Term" control="button"
+        description="run MultiSystem script in Terminal..."
+        title="Terminal Emulator" type="shell" />
+
+    <card description="when you run into any issues, always copy log to your internal/external storage and post it with your report!"
+		stripe-color="#5D4037" title="Report" type="text-stripe" />
+
+    <card button="Copy Log to Internal Storage" command="@su: busybox cp /data/log/MultiSystem.log /storage/sdcard0/" control="button"
+        description="copy log to internal storage..."
+        title="Log to SD card" type="shell" />
+
+    <card button="Copy Log to External Storage" command="@su: busybox cp /data/log/MultiSystem.log /storage/extSdCard/" control="button"
+        description="copy log to external storage..."
+        title="Log to External SD" type="shell" />
+
+    <card button="Clear Log Files" command="@su: busybox rm /MultiSystem/log/*.log /storage/extSdCard/" control="button"
+        description="clear all log files..."
+        title="Clear Logs" type="shell" />
+
+    <card description="Reboot to stock system, a virtual ROM, quick reboot, Download, or recovery!"
+		stripe-color="#7f8c8d" title="Reboot" type="text-stripe" />
+
+    <card button="Reboot to Stock System" command="@su: touch /MultiSystem/etc/.stock; reboot" control="button"
+        description="Reboot to stock system!"
+        title="Stock System" type="shell" />
+
+    <card button="Reboot to Active System" command="@su: reboot" control="button"
+        description="reboot to the primary virtual system!"
+        title="Virtual System" type="shell" />
+
+    <card button="Quick Reboot" command="@su: killall system_server" control="button"
+        description="quick/hot reboot to the current system!"
+        title="Quick Reboot" type="shell" />
+
+    <card button="Reboot to Download Mode" command="@su: reboot download" control="button"
+        description="reboot to Download mode"
+        title="Download Mode" type="shell" />
+
+    <card button="Reboot to Recovery Mode" command="@su: reboot recovery" control="button"
+        description="reboot to recovery mode"
+        title="Recovery Mode" type="shell" />
+</plugin>

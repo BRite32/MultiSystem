@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="setOnBoot"
+        android:title="@string/set_on_boot"
+        android:summaryOff="@string/set_on_boot_summary_off"
+        android:summaryOn="@string/set_on_boot_summary_on"/>
+</PreferenceScreen>

@@ -1,0 +1,22 @@
+<plugin>
+    <config app-name="MultiSystem v1.3.2"
+        app-color="#666666"
+        tabs-amount="1"
+        tab0="MultiROM and Recovery Replacement for Android"
+        tab1="Install"
+        tab2="Backup"
+        tab3="Restore"
+        tab4="Wipe"
+        tab5="Mount"
+        tab6="Terminal"
+        tab7="Tweaks"
+        tab8="Reboot"
+        tab9="Help"
+        youtube-user="hsbadr"
+        website="https://github.com/hsbadr/MultiSystem"
+        xda="http://forum.xda-developers.com/android/software-hacking/tool-multirom-recovery-replacement-t3102395"
+        twitter="http://forum.xda-developers.com/donatetome.php?u=5868929"
+        g-plus="mailto:hamada.s.badr@gmail.com"
+        facebook="http://facebook.com/hsbadr">
+    </config>
+</plugin>
