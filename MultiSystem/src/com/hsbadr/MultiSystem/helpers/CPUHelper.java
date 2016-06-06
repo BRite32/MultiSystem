@@ -168,19 +168,27 @@ public class CPUHelper {
     }
 
     public static boolean writeOneLine(String fname, String value) {
+        boolean succeeded = true;
+        FileWriter fw = null;
         try {
-            FileWriter fw = new FileWriter(fname);
-            try {
-                fw.write(value);
-            } finally {
-                fw.close();
-            }
+            fw = new FileWriter(fname);
+            fw.write(value);
+            
         } catch (IOException e) {
             String Error = "Error writing to " + fname + ". Exception: ";
             Log.e(TAG, Error, e);
-            return false;
+            succeeded = false;
+        } finally {
+            try {
+                if (fw != null)
+                    fw.close();
+            } catch (IOException e) {
+                String Error = "Error writing to " + fname + ". Exception: ";
+                Log.e(TAG, Error, e);
+                succeeded = false;
+            }
         }
-        return true;
+        return succeeded;
     }
 
     public static String[] getAvailableIOSchedulers() {
