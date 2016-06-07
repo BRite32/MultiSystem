@@ -101,28 +101,42 @@ public class CardDownload extends Card {
         @Override
         protected String doInBackground(String... f_url) {
             int count;
+            InputStream input = null;
+            OutputStream output = null;
             try {
                 URL url = new URL(f_url[0]);
                 URLConnection connection = url.openConnection();
                 connection.connect();
 
                 int lengthOfFile = connection.getContentLength();
-                InputStream input = new BufferedInputStream(url.openStream(), 8192);
-                OutputStream output = new FileOutputStream(f_url[1]);
+                input = new BufferedInputStream(url.openStream(), 8192);
+                output = new FileOutputStream(f_url[1]);
 
                 byte data[] = new byte[1024];
                 long total = 0;
 
                 while ((count = input.read(data)) != -1) {
                     total += count;
-                    publishProgress("" + (int) ((total * 100) / lengthOfFile));
+                    publishProgress(Integer.toString((int) ((total * 100) / lengthOfFile)));
                     output.write(data, 0, count);
                 }
                 output.flush();
-                output.close();
-                input.close();
             } catch (Exception e) {
                 Log.e("Error: ", e.getMessage());
+            } finally {
+                try {
+                    if (output != null)
+                        output.close();
+                } catch (Exception e) {
+                    Log.e("Error: ", e.getMessage()); 
+                }
+
+                try {
+                    if (input != null)
+                        input.close();
+                } catch (Exception e) {
+                    Log.e("Error: ", e.getMessage());
+                }
             }
             return null;
         }

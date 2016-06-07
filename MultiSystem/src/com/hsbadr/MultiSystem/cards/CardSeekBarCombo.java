@@ -69,7 +69,7 @@ public class CardSeekBarCombo extends Card {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                e.setText(i + "");
+                e.setText(Integer.toString(i));
                 seekBarProgress = i;
             }
 
