@@ -404,7 +404,7 @@ public class PluginFragment extends Fragment implements ParserInterface {
                                 runSuCommand(Shell.SED + prop + "/d\" " + Shell.BUILD_PROP);
                                 runSuCommand(Shell.ECHO + "\"" + prop + "=" + value + "\" >> " + Shell.BUILD_PROP);
                                 runSuCommand("setprop " + prop + " " + value);
-                                SystemPropertiesReflection.set(fa, prop, value + "");
+                                SystemPropertiesReflection.set(fa, prop, Integer.toString(value));
                                 SharedPreferences pref = fa.getSharedPreferences(title, 0);
                                 pref.edit().putInt(title, value).commit();
                             } catch (NullPointerException e) {

@@ -185,8 +185,8 @@ public class LineGraph extends View {
 		if (fullImage == null || shouldUpdate) {
 			fullImage = Bitmap.createBitmap(getWidth(), getHeight(), Config.ARGB_8888);
 			Canvas canvas = new Canvas(fullImage);
-			String max = (int)maxY+"";// used to display max
-			String min = (int)minY+"";// used to display min
+			String max = Integer.toString((int)maxY);// used to display max
+			String min = Integer.toString((int)minY);// used to display min
 			paint.reset();
 			Path path = new Path();
 			

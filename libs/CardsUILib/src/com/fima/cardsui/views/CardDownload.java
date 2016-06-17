@@ -117,7 +117,7 @@ public class CardDownload extends Card {
 
                 while ((count = input.read(data)) != -1) {
                     total += count;
-                    publishProgress("" + (int) ((total * 100) / lengthOfFile));
+                    publishProgress(Integer.toString((int) ((total * 100) / lengthOfFile)));
                     output.write(data, 0, count);
                 }
                 output.flush();
